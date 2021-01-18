@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "module": "esnext",
+    "target": "es6",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/type/*": ["src/types"]
+    }
+  },
+  "include": ["pages", "src"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
