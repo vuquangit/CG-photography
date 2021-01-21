@@ -21,6 +21,6 @@
       "@/type/*": ["src/types"]
     }
   },
-  "include": ["pages", "src"],
+  "include": ["pages", "src", "./index.d.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

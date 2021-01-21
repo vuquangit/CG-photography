@@ -1,8 +1,13 @@
 module.exports = {
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push({
-      test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+      test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
       loader: require.resolve("url-loader")
+    });
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
     });
 
     return config;
@@ -13,4 +18,4 @@ module.exports = {
       "/about": { page: "/about" },
     };
   },
-};
+}

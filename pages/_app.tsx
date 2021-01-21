@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import '../styles/tailwind.css'
-// import '../src/assets/main.css';
 
 type PropsType ={
   Component: React.ComponentType<any>
