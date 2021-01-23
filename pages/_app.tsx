@@ -1,13 +1,22 @@
 import React, { FC } from "react";
-import '../styles/tailwind.css'
+import { Provider } from "react-redux";
 
-type PropsType ={
-  Component: React.ComponentType<any>
-  pageProps: any
-}
+import "../styles/tailwind.css";
+import { initializeStore } from "../src/store/";
+
+type PropsType = {
+  Component: React.ComponentType<any>;
+  pageProps: any;
+};
 
 const MyApp: FC<PropsType> = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-}
+  const store = initializeStore();
+
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+};
 
 export default MyApp;

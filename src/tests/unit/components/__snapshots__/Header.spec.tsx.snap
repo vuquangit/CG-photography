@@ -3,7 +3,7 @@
 exports[`Header Test Header render 1`] = `
 <div>
   <header
-    class="border-b-2"
+    class="absolute top-0 left-0 z-1000 w-full transition"
   >
     <div
       class="flex flex-column justify-center items-center my-8"
@@ -12,7 +12,8 @@ exports[`Header Test Header render 1`] = `
         class="flex flex-row justify-center items-center space-x-16 mr-16"
       >
         <li
-          class="flex-auto p-4 text-xl"
+          class="flex-auto p-4 text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          style="color: rgb(0, 0, 0);"
         >
           <a
             href="/"
@@ -21,7 +22,8 @@ exports[`Header Test Header render 1`] = `
           </a>
         </li>
         <li
-          class="flex-auto p-4 text-xl"
+          class="flex-auto p-4 text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          style="color: rgb(0, 0, 0);"
         >
           <a
             href="/blog"
@@ -33,7 +35,7 @@ exports[`Header Test Header render 1`] = `
       <div>
         <img
           alt="Logo"
-          class="cursor-pointer h-24 w-48 bg-black"
+          class="cursor-pointer h-24 w-48 bg-transparent transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
           src="[object Object]"
         />
       </div>
@@ -41,7 +43,8 @@ exports[`Header Test Header render 1`] = `
         class="flex flex-row justify-center items-center space-x-16 ml-16"
       >
         <li
-          class="flex-auto p-4 text-xl"
+          class="flex-auto p-4 text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          style="color: rgb(0, 0, 0);"
         >
           <a
             href="/about"
@@ -50,7 +53,8 @@ exports[`Header Test Header render 1`] = `
           </a>
         </li>
         <li
-          class="flex-auto p-4 text-xl"
+          class="flex-auto p-4 text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+          style="color: rgb(0, 0, 0);"
         >
           <a
             href="/contact"
