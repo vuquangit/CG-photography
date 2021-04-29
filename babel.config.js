@@ -12,6 +12,21 @@ module.exports = {
     "@babel/preset-typescript",
   ],
   plugins: [
-    // "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "inline-react-svg",
+      {
+        "svgo": {
+          "plugins": [
+            {
+              "name": "removeAttrs",
+              "params": { "attrs": "(data-name)" }
+            },
+            "cleanupIDs"
+          ]
+        }
+      }
+    ]
   ],
 };

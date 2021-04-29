@@ -1,7 +1,10 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
-module.exports = {
+import type {Config} from '@jest/types';
+
+// Sync object
+const config: Config.InitialOptions = {
   cacheDirectory: "<rootDir>/tmp/unit/",
 
   // Automatically clear mock calls and instances between every test
@@ -58,16 +61,17 @@ module.exports = {
 
   globals: {
     "ts-jest": {
-      tsConfigFile: "tsconfig.json",
-      enableTsDiagnostics: true,
+      tsconfig: "tsconfig.json",
     },
   },
 
   moduleNameMapper: {
-    // "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    // "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
     // "\\.(css|less|scss|sass|png)$": "identity-obj-proxy",
-    "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
-      "jest-transform-stub",
+    "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
     "^@/(.*)$": "<rootDir>/src/$1",
+    "^.+\\.svg": "<rootDir>/src/__mocks__/svgrMock.ts",
   },
 };
+
+export default config;

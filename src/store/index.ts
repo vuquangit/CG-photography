@@ -8,7 +8,7 @@ import {
 } from '@reduxjs/toolkit'
 import { createInjectorsEnhancer, forceReducerReload } from 'redux-injectors'
 import createSagaMiddleware from 'redux-saga'
-import { createLogger } from 'redux-logger'
+// import { createLogger } from 'redux-logger'
 
 import createReducer, { RootState } from './rootReducer'
 import { rootSaga } from './rootSaga'
@@ -28,7 +28,7 @@ export const initializeStore = (
   const { run: runSaga } = sagaMiddleware
 
   const middlewares = isDevelopmentEnv
-    ? [sagaMiddleware, createLogger()]
+    ? [sagaMiddleware /*, createLogger() */]
     : [sagaMiddleware]
 
   const enhancers = [

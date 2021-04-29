@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 
 import { RootState } from "@/store/rootReducer";
-import Logo from "@/assets/images/chang-gio-logo.png";
+import LogoIcon from '../assets/images/logo.svg'
+
+
 
 const navListLeft = [
   {
@@ -37,9 +39,9 @@ const Header: React.FC = () => {
   );
 
   return (
-    <header className="absolute top-0 left-0 z-1000 w-full transition">
-      <div className="flex flex-column justify-center items-center my-8">
-        <ul className="flex flex-row justify-center items-center space-x-16 mr-16">
+    <header className="absolute top-0 left-0 w-full transition z-1000">
+      <div className="flex items-center justify-center my-8 flex-column">
+        <ul className="flex flex-row items-center justify-center mr-16 space-x-16">
           {navListLeft.map((item, index) => (
             <li
               key={`${item.href}${index}`}
@@ -50,17 +52,11 @@ const Header: React.FC = () => {
           ))}
         </ul>
 
-        <div>
-          <Link href="/">
-            <img
-              className="cursor-pointer h-24 w-48 bg-transparent transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-              src={Logo}
-              alt="Logo"
-            />
-          </Link>
-        </div>
+        {/* <Link href="/"> */}
+          <LogoIcon className="h-20 md:h-22 lg:h-24" />
+        {/* </Link> */}
 
-        <ul className="flex flex-row justify-center items-center space-x-16 ml-16">
+        <ul className="flex flex-row items-center justify-center ml-16 space-x-16">
           {navListRight.map((item, index) => (
             <li
               key={`${item.href}${index}`}
