@@ -1,41 +1,41 @@
 import React from "react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import classNames from "classnames";
 
 import { RootState } from "@/store/rootReducer";
-import LogoIcon from '../assets/images/logo.svg'
-
-
+import LinkRef from "@/components/Link";
+import LogoIcon from "../assets/images/logo.svg";
 
 const navListLeft = [
   {
     href: "/",
     title: "Home",
-    icon: "",
   },
   {
-    href: "/blog",
-    title: "Blog",
-    icon: "",
+    href: "/services",
+    title: "Services",
   },
 ];
 
 const navListRight = [
   {
-    href: "/about",
-    title: "About",
-    icon: "",
+    href: "/gallery",
+    title: "Gallery",
   },
   {
-    href: "/contact",
-    title: "Contact",
-    icon: "",
+    href: "/blogs",
+    title: "Blogs",
   },
 ];
 
 const Header: React.FC = () => {
   const headerTextColor = useSelector(
     (state: RootState) => state.themeHeader.color
+  );
+
+  const titleMenuStyle = classNames(
+    "flex-auto p-4 text-xl transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-110"
   );
 
   return (
@@ -45,22 +45,27 @@ const Header: React.FC = () => {
           {navListLeft.map((item, index) => (
             <li
               key={`${item.href}${index}`}
-              className="flex-auto p-4 text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+              className={titleMenuStyle}
               style={{ color: headerTextColor }}>
               <Link href={item.href}>{item.title}</Link>
             </li>
           ))}
         </ul>
 
-        {/* <Link href="/"> */}
-          <LogoIcon className="h-20 md:h-22 lg:h-24" />
-        {/* </Link> */}
+        <LinkRef href="/" passHref>
+          <div>
+            <LogoIcon
+              className="h-20 text-black transition duration-1000 ease-in-out md:h-22 lg:h-24"
+              style={{ color: headerTextColor }}
+            />
+          </div>
+        </LinkRef>
 
         <ul className="flex flex-row items-center justify-center ml-16 space-x-16">
           {navListRight.map((item, index) => (
             <li
               key={`${item.href}${index}`}
-              className="flex-auto p-4 text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+              className={titleMenuStyle}
               style={{ color: headerTextColor }}>
               <Link href={item.href}>{item.title}</Link>
             </li>

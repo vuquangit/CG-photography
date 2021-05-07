@@ -10,7 +10,7 @@ import axios from "axios";
 
 const fetcher = (url: string) => axios.get(url).then(res => res.data)
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   // const { data, error } = useSWR('/api/people', fetcher)
 
   // console.log('data', data);
@@ -28,4 +28,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomePage
